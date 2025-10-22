@@ -16,6 +16,7 @@
             width: 200px;
             border-radius: 8px;
             margin-top: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
         .result {
             font-size: 20px;
@@ -26,6 +27,9 @@
             display: inline-block;
             box-shadow: 0px 0px 10px #ccc;
         }
+        .result p {
+            margin: 10px 0;
+        }
         a {
             display: inline-block;
             margin-top: 25px;
@@ -34,6 +38,7 @@
             background-color: #4CAF50;
             padding: 10px 20px;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
         a:hover {
             background-color: #45a049;
@@ -47,7 +52,7 @@
     <div class="result">
         <p><strong>Selected Model:</strong> {{ model_name }}</p>
         <p><strong>Predicted Class:</strong> {{ prediction }}</p>
-        <img src="{{ url_for('static', filename='uploads/' + image_path.split('/')[-1]) }}" alt="Uploaded Image">
+        <img src="{{ url_for('static', filename='uploads/' + image_path) }}" alt="Uploaded Image">
     </div>
 
     <a href="/">Try Another Image</a>
