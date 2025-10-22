@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIFAR-10 Image Classifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        select, input[type="file"], input[type="submit"] {
+            margin: 15px 0;
+            padding: 8px;
+            width: 80%;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CIFAR-10 Image Classification</h1>
+    <p>Upload an image and choose a model to classify it.</p>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label for="model">Choose Model:</label><br>
+        <select name="model" id="model">
+            <option value="Baseline">Baseline CNN</option>
+            <option value="VGG16_Transfer">VGG16 Transfer Learning</option>
+        </select><br><br>
+
+        <label for="file">Upload Image:</label><br>
+        <input type="file" name="file" accept="image/*" required><br><br>
+
+        <input type="submit" value="Classify Image">
+    </form>
+
+</body>
+</html>
